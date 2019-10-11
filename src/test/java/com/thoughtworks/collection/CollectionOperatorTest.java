@@ -66,31 +66,31 @@ public class CollectionOperatorTest {
 
         assertThat(collectionOperator.popLastElment(array)).isEqualTo(5);
     }
-//
-//    @Test
-//    public void should_pop_common_elements() {
-//        //Pops up the intersection of two arrays
-//        int[] firstArray = new int[]{1, 2, 4, 6, 10};
-//        int[] secondArray = new int[]{3, 2, 6, 10, 8};
-//
-//        Integer[] result = new Integer[]{2, 6, 10};
-//        List<Integer> resultList = Arrays.asList(result);
-//
-//        CollectionOperator collectionOperator = new CollectionOperator();
-//        assertThat(collectionOperator.popCommonElement(firstArray, secondArray)).isEqualTo(resultList);
-//    }
 
-//    @Test
-//    public void should_add_uncommon_elements_to_first_array() {
-//        // Add a different element from the array two to the array one
-//        Integer[] firstArray = new Integer[]{1, 2, 4, 6, 10};
-//        Integer[] secondArray = new Integer[]{3, 2, 6, 10, 8};
-//
-//        Integer[] result = new Integer[]{1, 2, 4, 6, 10, 3, 8};
-//        List<Integer> resultList = Arrays.asList(result);
-//
-//        CollectionOperator collectionOperator = new CollectionOperator();
-//        assertThat(collectionOperator.addUncommonElement(firstArray, secondArray).size()).isEqualTo(7);
-//        assertThat(collectionOperator.addUncommonElement(firstArray, secondArray)).isEqualTo(resultList);
-//    }
+    @Test
+    public void should_pop_common_elements() {
+        //Pops up the intersection of two arrays
+        int[] firstArray = new int[]{1, 2, 4, 6, 10};
+        int[] secondArray = new int[]{3, 2, 6, 10, 8};
+
+        Integer[] result = new Integer[]{2, 6, 10};
+        List<Integer> resultList = Arrays.asList(result);
+
+        CollectionOperator collectionOperator = new CollectionOperator();
+        assertThat(collectionOperator.popCommonElement(firstArray, secondArray)).isEqualTo(resultList);
+    }
+
+    @Test
+    public void should_add_uncommon_elements_to_first_array() {
+        // Add a different element from the array two to the array one
+        Integer[] firstArray = new Integer[]{1, 2, 4, 6, 10};
+        Integer[] secondArray = new Integer[]{3, 2, 6, 10, 8};
+
+        Integer[] result = new Integer[]{1, 2, 4, 6, 10, 3, 8};
+        List<Integer> resultList = Arrays.asList(result);
+
+        CollectionOperator collectionOperator = new CollectionOperator();
+        assertThat(collectionOperator.addUncommonElement(firstArray, secondArray).size()).isEqualTo(7);
+        assertThat(collectionOperator.addUncommonElement(firstArray, secondArray)).isEqualTo(resultList);
+    }
 }
