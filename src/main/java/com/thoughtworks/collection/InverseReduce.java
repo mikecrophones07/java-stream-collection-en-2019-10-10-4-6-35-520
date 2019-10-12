@@ -1,9 +1,10 @@
 package com.thoughtworks.collection;
 
+import javafx.beans.binding.When;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.IntStream;
 
 public class InverseReduce {
 
@@ -16,6 +17,13 @@ public class InverseReduce {
     }
 
     public List<Integer> divideToSmaller(int number) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        Integer divider = random.nextInt(3);
+        Integer num = Integer.parseInt(String.valueOf(number));
+        while((num - divider) > 0){
+            num -= divider;
+            result.add(num);
+        }
+        return result;
     }
 }
