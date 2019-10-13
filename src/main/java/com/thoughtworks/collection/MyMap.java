@@ -33,18 +33,18 @@ public class MyMap {
         return String.valueOf(Character.valueOf((char) num));
     }
 
-    public List<String> mapLetters() {
-        return array.stream().map(value -> {
-            List<Integer> list;
+//    public List<String> mapLetters() {
+//        return array.stream().map(value -> {
+//            List<Integer> list;
 //            int num = value + 96;
 //            String result = isInRange(num) ? String.valueOf(Character.valueOf((char)getRangeNumber(num))) : "";
 //            while (!isInRange(num)){
 //                num = num - 26;
 //                result += isInRange(num) ? String.valueOf(Character.valueOf((char)getRangeNumber(num))) : "";
 //            }
-            return "";
-        }).collect(Collectors.toList());
-    }
+//            return "";
+//        }).collect(Collectors.toList());
+//    }
 
     private int getRangeNumber(int num) {
         if(isInRange(num)){
