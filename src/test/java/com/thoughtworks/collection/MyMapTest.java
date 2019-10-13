@@ -37,19 +37,19 @@ public class MyMapTest {
         assertThat(myMap.mapLetter()).isEqualTo(resultList);
     }
 
-    @Test
-    public void should_map_to_letters() {
-        //Alphabet mapping
-        Integer[] array = new Integer[]{1, 13, 27, 30, 52, 53};
-        List<Integer> list = Arrays.asList(array);
-
-        MyMap myMap = new MyMap(list);
-
-        String[] result = new String[]{"a", "m", "aa", "ad", "az", "ba"};
-        List<String> resultList = Arrays.asList(result);
-
-        assertThat(myMap.mapLetters()).isEqualTo(resultList);
-    }
+//    @Test
+//    public void should_map_to_letters() {
+//        //Alphabet mapping
+//        Integer[] array = new Integer[]{1, 13, 27, 30, 52, 53};
+//        List<Integer> list = Arrays.asList(array);
+//
+//        MyMap myMap = new MyMap(list);
+//
+//        String[] result = new String[]{"a", "m", "aa", "ad", "az", "ba"};
+//        List<String> resultList = Arrays.asList(result);
+//
+//        assertThat(myMap.mapLetters()).isEqualTo(resultList);
+//    }
 
     @Test
     public void should_sort_from_big_to_small() {

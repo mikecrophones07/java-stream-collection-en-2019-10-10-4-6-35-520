@@ -13,42 +13,89 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, (initial, curr) -> {
+            if(initial>curr){
+                return initial;
+            }
+            return curr;
+        });
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, (initial, curr) -> {
+            if(initial<curr && initial != 0){
+                return initial;
+            }
+            return curr;
+        });
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, Integer::sum).doubleValue() / arrayList.size();
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        return arrayList.stream().mapToDouble(Integer::doubleValue).reduce(0, (initial, curr) ->{
+            int quotient = (int) Math.round((double) arrayList.size() /2);
+            if(arrayList.size()%2 == 0){
+                return (double) (arrayList.get(quotient-1) + arrayList.get(quotient)) / 2;
+            }
+            else{
+                return (double) arrayList.get(quotient-1);
+            }
+        });
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, (initial, curr) ->{
+            if(initial == 0) {
+                if (curr % 2 == 0) {
+                    return curr;
+                }
+            }
+            return initial;
+        });
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        return arrayList.indexOf(getFirstEven());
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return this.arrayList.stream().reduce(1, (initial, curr) -> {
+            try {
+                if(arrayList.get(initial-1).equals(curr) && initial != 0){
+                    return ++initial;
+                }
+                return 0;
+            }catch (Exception e){
+                return 0;
+            }
+        }) >= 1;
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        return arrayList.stream().mapToDouble(Integer::doubleValue).reduce(0, (initial, curr) ->{
+            int quotient = (int) Math.round((double) arrayList.size() /2);
+            if(arrayList.size()%2 == 0){
+                return (double) ((int)singleLink.getNode(quotient+1) + (int)singleLink.getNode(quotient)) / 2;
+            }
+            else{
+                return Double.valueOf(singleLink.getNode(quotient).toString());
+            }
+        });
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, (initial, curr) ->{
+            if(curr%2 != 0){
+                return curr;
+            }
+            return initial;
+        });
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        return arrayList.indexOf(getLastOdd());
     }
 }
